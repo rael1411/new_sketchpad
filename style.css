@@ -24,7 +24,7 @@
     cursor: pointer;
   }
 .square{
-    grid-area;
+    grid-area; 
 }
 .post{
     background-color: red;

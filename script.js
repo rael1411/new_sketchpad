@@ -10,9 +10,16 @@ userChoice.addEventListener("click", function(){
     createGrid(newSquares);
     container.style.gridTemplateRows = `repeat(${newSquares}, 1fr)`;
     container.style.gridTemplateColumns = `repeat(${newSquares}, 1fr)`;
-
 });
 const clear = document.querySelector("#clear");
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
 
 
@@ -22,8 +29,8 @@ function createGrid(squaresCount){
         let square = document.createElement("square");
         square.classList.add("square");
         container.appendChild(square);
-        square.addEventListener("mouseover", function() {
-            this.classList.add("post");
+        square.addEventListener("mouseover", (e) => {
+            e.target.style.backgroundColor = getRandomColor();
         });
     }
 }
